@@ -1,0 +1,58 @@
+package edu.towson.cis.cosc603.project4.rectangle;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Rectangle.
+ */
+public class Rectangle {
+	
+	/** The p2. */
+	private Point point1, point2;
+	
+	/**
+	 * Instantiates a new rectangle.
+	 *
+	 * @param point1 the point1
+	 * @param point2 the point2
+	 */
+	Rectangle(Point point1, Point point2) {
+		this.point1 = point1;
+		this.point2 = point2;
+	}
+	
+	/**
+	 * Gets the point1.
+	 *
+	 * @return the point1
+	 */
+	public Point getPoint1() {
+		return point1;
+	}
+
+	/**
+	 * Gets the point2.
+	 *
+	 * @return the point2
+	 */
+	public Point getPoint2() {
+		return point2;
+	}
+	
+	/**
+	 * Gets the area.
+	 *
+	 * @return the area
+	 */
+	public Double getArea() {
+		return Math.abs((point2.x - point1.x) * (point2.y - point1.y));
+	}
+	
+	/**
+	 * Gets the diagonal.
+	 *
+	 * @return the diagonal
+	 */
+	public Double getDiagonal() {
+		return Math.sqrt(Math.pow((point2.x - point1.x), 2) + Math.pow((point2.y - point1.y), 2));
+	}
+}

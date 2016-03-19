@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RectangleTest" project="Rectangle" tests="2" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="edu.towson.cis.cosc603.project4.rectangle.RectangleTest" incomplete="true">
+    <testcase name="testGetArea" classname="edu.towson.cis.cosc603.project4.rectangle.RectangleTest" incomplete="true"/>
+    <testcase name="testGetDiagonal" classname="edu.towson.cis.cosc603.project4.rectangle.RectangleTest" incomplete="true"/>
+  </testsuite>
+</testrun>
