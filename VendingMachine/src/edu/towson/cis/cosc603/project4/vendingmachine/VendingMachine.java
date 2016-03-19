@@ -139,10 +139,10 @@ public class VendingMachine {
 
 	/**
 	 * Function to put money into the vending machine.  
-	 * Precondition: amount >= 0
+	 * Precondition: amount greater than or equal to 0
 	 * Postcondition: balance is now the previous balance + amount.
 	 * @param amount The amount of money to put in the vending machine
-	 * @throws VendingMachineException Throws a VendingMachineException if the amount is < 0 
+	 * @throws VendingMachineException Throws a VendingMachineException if the amount is less than 0 
 	 */
 	public void insertMoney(double amount) throws VendingMachineException {
 		if( amount < 0 )
@@ -153,8 +153,8 @@ public class VendingMachine {
 	/**
 	 * Returns the amount of change the user has in the vending machine.  Note that this simply
 	 * returns the amount and does not actually give back the change to the user.
-	 * Precondition: balance >= 0; Note that the vending machine should start with a 0 balance.
-	 * Postcondition: the balance is >= 0 and remains the same as it was before the function was called.
+	 * Precondition: balance greater than or equal to 0; Note that the vending machine should start with a 0 balance.
+	 * Postcondition: the balance is greater than or equal to 0 and remains the same as it was before the function was called.
 	 * @return The balance in the vending machine
 	 */
 	public double getBalance() {
@@ -163,7 +163,7 @@ public class VendingMachine {
 	
 	/**
 	 * This function attempts to purchase the item with the given code from the vending machine.
-	 * Precondition: balance >= 0
+	 * Precondition: balance greater than or equal to 0
 	 * Postcondition: The amount of the item is subtracted from the balance
 	 * @param code The code for the item from the vending machine
 	 * @return Returns true if there is enough money to make the purchase.  Returns false if not enough money is put
@@ -182,7 +182,7 @@ public class VendingMachine {
 
 	/**
 	 * Returns the amount of change in the machine and sets the balance to 0.
-	 * Precondition: balance >= 0
+	 * Precondition: balance greater than or equal to 0
 	 * Postcondition: balance = 0
 	 * @return The amount of change in the machine
 	 */

@@ -1,0 +1,116 @@
+package edu.towson.cis.cosc603.project4.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The unit test Class for VendingMachine.
+ */
+public class VendingMachineTest {
+	/** Declare necessary test objects for {@link VendingMachine} */
+	VendingMachineItem vmItem1, vmItem2;
+	VendingMachine vm1, vm2;
+	
+	/**
+	 * Initializes the necessary test objects for the test cases to use.
+	 *
+	 * @throws Exception the exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		vm1 = new VendingMachine();
+		vmItem1 = new VendingMachineItem("Item 1", 10);
+		vmItem2 = new VendingMachineItem("Item 2", 5);
+	}
+	
+	
+	/**
+	 * Test for the addItem() method of the {@link VendingMachineItem} class
+	 * when given a valid code for an unoccupied slot.
+	 */
+	@Test
+	public void testAddItemValid(){
+		vm1.addItem(vmItem1, "A");
+		assertNotNull(vm1.getItem("A"));
+		assertEquals(vmItem1, vm1.getItem("A"));		
+		
+		vm1.addItem(vmItem2, "B");
+		assertNotNull(vm1.getItem("B"));
+		assertEquals(vmItem2, vm1.getItem("B"));
+	}
+
+	
+	/**
+	 * Test for the addItem() method of the {@link VendingMachineItem} class
+	 * when given invalid code.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testAddItemInvalidCode(){
+		vm1.addItem(vmItem1, "!@#");
+	}
+	
+	
+	/**
+	 * Test for the addItem() method of the {@link VendingMachineItem} class
+	 * when adding item to an occupied slot.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testAddItemOccupied(){
+		vm1.addItem(vmItem1, "A");
+		vm1.addItem(vmItem2, "A");
+	}
+	
+
+	/**
+	 * Test for the removeItem() method of the {@link VendingMachineItem} class
+	 * when given a valid code for an occupied slot.
+	 */
+	@Test
+	public void testRemoveItemValid(){
+		vm1.addItem(vmItem1, "A");
+		vm1.addItem(vmItem2, "B");
+		
+		vm1.removeItem("A");
+		assertNull(vm1.getItem("A"));
+		assertNotNull(vm1.getItem("B"));
+		
+		vm1.removeItem("B");
+		assertNull(vm1.getItem("B"));
+	}
+
+	
+	/**
+	 * Test for the removeItem() method of the {@link VendingMachineItem} class
+	 * when given invalid code.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testRemoveItemInvalidCode(){
+		vm1.addItem(vmItem1, "A");
+		vm1.removeItem("!@#");
+	}
+	
+	
+	/**
+	 * Test for the removeItem() method of the {@link VendingMachineItem} class
+	 * when removing item from an unoccupied slot.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testRemoveItemUnoccupied(){
+		vm1.removeItem("A");
+	}
+	
+	
+	/**
+	 * Cleans up test objects after a test case is executed.
+	 */
+	@After
+	public void tearDown(){
+		vmItem1 = null;
+		vmItem2 = null;
+		vm1 = null;
+		vm2 = null;
+	}
+}

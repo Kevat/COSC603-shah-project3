@@ -1,0 +1,38 @@
+package edu.towson.cis.cosc603.project4.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The unit test Class for VendingMachine.
+ */
+public class VendingMachineTest {
+	/** Declare necessary test objects for {@link VendingMachine} */
+	VendingMachineItem vmItem1, vmItem2;
+	VendingMachine vm1, vm2;
+	
+	/**
+	 * Initializes the necessary test objects for the test cases to use.
+	 *
+	 * @throws Exception the exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+		
+	
+	/**
+	 * Cleans up test objects after a test case is executed.
+	 */
+	@After
+	public void tearDown(){
+		vmItem1 = null;
+		vmItem2 = null;
+		vm1 = null;
+		vm2 = null;
+	}
+}

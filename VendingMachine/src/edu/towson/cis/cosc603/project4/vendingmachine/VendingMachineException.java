@@ -2,7 +2,7 @@ package edu.towson.cis.cosc603.project4.vendingmachine;
 
 /**
  * This class is for exceptions thrown by the vending machine class.
- * Examples of such exceptions include giving a price that is < 0, trying to
+ * Examples of such exceptions include giving a price that is less than 0, trying to
  * add an item that is already in a certain spot, etc.
  *
  */
