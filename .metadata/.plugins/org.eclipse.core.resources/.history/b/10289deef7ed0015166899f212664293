@@ -1,0 +1,14 @@
+package edu.towson.cis.cosc603.project4.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The unit test Class for VendingMachineItem.
+ */
+public class VendingMachineItemTest {
+
+}

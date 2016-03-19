@@ -32,22 +32,6 @@ public class RectangleTest {
 		rect2 = new Rectangle(point3, point4);
 	}
 
-
-	/**
-	 * Test for the constructor method of the {@link Point} class.
-	 */
-	@Test
-	public void testPoint() {
-		assertEquals(2.0, point1.getX(),0.001);
-		assertEquals(2.0, point1.getY(),0.001);
-		assertEquals(4.0, point2.getX(),0.001);
-		assertEquals(7.0, point2.getY(),0.001);
-		assertEquals(2.0, point3.getX(),0.001);
-		assertEquals(6.0, point3.getY(),0.001);
-		assertEquals(4.0, point4.getX(),0.001);
-		assertEquals(3.0, point4.getY(),0.001);
-	}
-	
 	/**
 	 * Test for the constructor method of the {@link Rectangle} class.
 	 */
@@ -86,6 +70,10 @@ public class RectangleTest {
 	 */
 	@After
 	public void tearDown(){
+		point1 = null;
+		point2 = null;
+		point3 = null;
+		point4 = null;
 		rect1 = null;
 		rect2 = null;
 	}
